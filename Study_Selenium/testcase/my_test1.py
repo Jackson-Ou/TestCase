@@ -10,6 +10,7 @@ import HTMLTestRunner
 
 class my_test1(unittest.TestCase):
     u"""我的测试11"""
+    u"""我的测试11"""
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(15)
