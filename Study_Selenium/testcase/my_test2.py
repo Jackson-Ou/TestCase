@@ -6,19 +6,23 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
-import HTMLTestRunner
+
 
 class my_test2(unittest.TestCase):
-    u"""我的测试2"""
+    global Browser   
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        if self.Browser=='Ie':
+            self.driver = webdriver.Ie()
+        elif self.Browser=='Chrome':
+            self.driver = webdriver.Chrome()
+        elif self.Browser=='Firefox':
+            self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(15)
         self.base_url = "http://www.baidu.com"
         self.verificationErrors = []
         self.accept_next_alert = True
     
     def test_3(self):
-        u"""测试3"""
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("kw").clear()
@@ -28,7 +32,6 @@ class my_test2(unittest.TestCase):
 
 
     def test_4(self):
-        u"""测试4"""
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_id("kw").clear()
