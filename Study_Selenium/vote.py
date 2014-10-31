@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-
+#使用htmlunit需要开启selenium-server-standalone-2.43.1.jar(开启命令java -jar selenium-server-standalone-2.43.1.jar)
 class vote(unittest.TestCase):
     def setUp(self):
 		self.driver = webdriver.Remote("http://localhost:4444/wd/hub", webdriver.DesiredCapabilities.HTMLUNIT)
